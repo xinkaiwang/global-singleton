@@ -30,11 +30,11 @@ var D = gs('D');
 ```
 
 ## What happened
-global-singleton will guarantee you: for same module 'D' will loaded once and only once. If module B runs first, the D copy in B's node_modules will get loaded and when C trying to load 'D', he will get the same copy (where B already loaded). 
+global-singleton will guarantee you: same module ('D') will load once and only once. If module B runs first, node_modules/B/node_modules/D will get loaded and when C trying to load 'D', we simply return the same copy which B already loaded (instead load another copy from node_modules/C/node_modules/D). 
 
-## Bad news and good news?
-- Bad news is: global-singleton will pollute *process* object and store a dictionary of <string, object> there (*process['global-singleton']*).
-- Good news is: you will never need to pollute *process* object (or anything global) if you choice to use global-singleton to handle this hassle for you.
+## Bad news and good news
+- Bad news: global-singleton will pollute *process* object and store a dictionary of <string, object> there (*process['global-singleton']*).
+- Good news: (Once GS already did the dirty work for you) You will never need to pollute *process* object (or anything global) by your-self, you can just trust GS to handle those hassle for you.
 
 ## What else?
 - global-singleton also promise don't do any breaking changes - ever. Which means, If B use GS 0.1.1 and load D1 as 'D', C can feel free to use GS 1000.0.0 and get 'D' still going to return D1 (which is loaded by B).
