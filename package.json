@@ -1,7 +1,7 @@
 {
   "name": "global-singleton",
-  "version": "0.1.0",
-  "description": "Garantee there is only 1 copy of a module or object in current VM",
+  "version": "0.1.1",
+  "description": "Guarantee there is only 1 copy of a module or object in current VM",
   "main": "lib/global-singleton.js",
   "scripts": {
     "test": "mocha"
