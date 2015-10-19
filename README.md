@@ -1,7 +1,7 @@
 # global-singleton
 Guarantee there is only 1 copy of a module or object
 
-**WARNING: Singletons are often considered anti-pattern in javascript/node practice. It is believed to compromising modularize and isolation between packages and hurt testability. If you don't know what are you doing, don't singleton!**
+**WARNING: Singletons are often considered anti-pattern in javascript/node practice. It is believed to compromising modularize and isolation between packages and hurt testability. If you don't know what are you doing, don't use singleton!**
 
 In general, in node.js programming you rarely need to worry about singleton, part of reason is *require()* caches result and you got some kinds of singleton.  But when you work on large projects (involve many modules and each bring in their own decency hierarchy), when multiple modules bring in multiple copy of same library, problem can happen.
 
